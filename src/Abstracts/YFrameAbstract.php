@@ -103,14 +103,13 @@ abstract class YFrameAbstract
      * set the default width.
      *
      * @param  int  $width
-     * @param  string  $unit
      *
-     * @return \SOS\LaravelYoutubeFrameGenerator\Abstracts\YFrameAbstract
+     * @return YFrameAbstract
      * @author karam mustafa
      */
-    public function width($width = 500, $unit = "px")
+    public function width($width = 500)
     {
-        $this->setCss("width:".$width.$unit.';');
+        $this->setCss("width:".$width.';');
 
         return $this;
     }
@@ -119,14 +118,13 @@ abstract class YFrameAbstract
      * set the default height.
      *
      * @param  int  $height
-     * @param  string  $unit
      *
-     * @return \SOS\LaravelYoutubeFrameGenerator\Abstracts\YFrameAbstract
+     * @return YFrameAbstract
      * @author karam mustafa
      */
-    public function height($height = 300, $unit = "px")
+    public function height($height = 300)
     {
-        $this->setCss("height:".$height.$unit.';');
+        $this->setCss("height:".$height.';');
 
         return $this;
 

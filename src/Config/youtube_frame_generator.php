@@ -4,12 +4,17 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | name of this config
+    | Default style configs
     |--------------------------------------------------------------------------
-    | description of this config.
-    | description of this config.
-    | description of this config.
-    | description of this config.
+    | You can edit the default options from here, 
+    | or you can pass the options (cee & height & width),
+    | from the setters functions, see the README file.
+    |
     */
+    'css' => '',
+    'attributes' => '',
+    'height' => '50%',
+    'width' => '100%',
+    'is_fullscreen' => false,
 
 ];

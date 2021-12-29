@@ -16,6 +16,16 @@ class YFrame extends YFrameAbstract implements YFrameInterface
 {
 
     /**
+     * YFrame constructor.
+     */
+    public function __construct()
+    {
+        $this->resolveConfig();
+    }
+
+    /**
+     * Get the youtube id from the inserted link.
+     *
      * @param  string  $url
      *
      * @return mixed
@@ -39,7 +49,7 @@ class YFrame extends YFrameAbstract implements YFrameInterface
             return $t[count($t) - 1];
         }
 
-        //otherwise assume that the user passed the id
+        // Otherwise assume that the user passed the id.
         return $url;
     }
 
@@ -56,6 +66,23 @@ class YFrame extends YFrameAbstract implements YFrameInterface
             $this->getAttributes(),
             $this->getCss()
         );
+    }
+
+    /**
+     * set the default configs.
+     *
+     * @return  YFrame
+     * @author karam mustafa
+     */
+    private function resolveConfig()
+    {
+        $this->setCss(config('youtube_frame_generator.css'))
+            ->height(config('youtube_frame_generator.height'))
+            ->width(config('youtube_frame_generator.width'))
+            ->setAttributes(config('youtube_frame_generator.attributes'))
+            ->isFullscreen(config('youtube_frame_generator.is_fullscreen'));
+
+        return $this;
     }
 
 

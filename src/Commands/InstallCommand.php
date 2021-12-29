@@ -3,17 +3,18 @@
 namespace SOS\LaravelYoutubeFrameGenerator\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Artisan;
 
 class InstallCommand extends Command
 {
-    public $packageLink = '';
+    public $packageLink = 'https://github.com/Syrian-Open-Source/laravel-youtube-iframe-generator';
 
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'package:install';
+    protected $signature = 'yframe:install';
 
     /**
      * The console command description.
@@ -40,7 +41,7 @@ class InstallCommand extends Command
     public function handle()
     {
 
-        // write some executions
+        Artisan::call('vendor:publish --tag=youtube-frame-generator');
 
         $this->info('<info> Install the dependencies was success</info>');
 
