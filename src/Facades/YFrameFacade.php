@@ -3,11 +3,13 @@
 namespace SOS\LaravelYoutubeFrameGenerator\Facades;
 
 use Illuminate\Support\Facades\Facade;
-use SOS\LaravelYoutubeFrameGenerator\Classes\IFrame;
-use SOS\LaravelYoutubeFrameGenerator\Classes\YFrame;
 
 /**
- * @method YFrame setExample(string $url)
+ * @method \SOS\LaravelYoutubeFrameGenerator\Abstracts\YFrameAbstract height(string $height, string $unit)
+ * @method \SOS\LaravelYoutubeFrameGenerator\Abstracts\YFrameAbstract width(string $width, string $unit)
+ * @method \SOS\LaravelYoutubeFrameGenerator\Abstracts\YFrameAbstract isFullscreen(bool $value)
+ * @method \SOS\LaravelYoutubeFrameGenerator\Abstracts\YFrameAbstract setAttributes(string $attr)
+ * @method \SOS\LaravelYoutubeFrameGenerator\Abstracts\YFrameAbstract generate(string $url)
  */
 class YFrameFacade extends Facade
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace SOS\LaravelYoutubeFrameGenerator\Classes;
+namespace SOS\LaravelYoutubeFrameGenerator\Abstracts;
 
-class YFrameAbstract
+abstract class YFrameAbstract
 {
     private $css = '';
     private $id = '';
-    private $fullscreen = true;
+    private $fullscreen = false;
     private $attributes = '';
 
     /**
@@ -59,18 +59,18 @@ class YFrameAbstract
      * @return string
      * @author karam mustaf
      */
-    public function getFullscreen()
+    public function getIsFullscreen()
     {
         return $this->fullscreen;
     }
 
     /**
-     * @param  string  $fullscreen
+     * @param  bool  $fullscreen
      *
      * @return YFrameAbstract
      * @author karam mustaf
      */
-    public function setFullscreen($fullscreen)
+    public function isFullscreen($fullscreen = true)
     {
         $this->fullscreen = $fullscreen;
 
@@ -105,11 +105,14 @@ class YFrameAbstract
      * @param  int  $width
      * @param  string  $unit
      *
+     * @return \SOS\LaravelYoutubeFrameGenerator\Abstracts\YFrameAbstract
      * @author karam mustafa
      */
     public function width($width = 500, $unit = "px")
     {
         $this->setCss("width:".$width.$unit.';');
+
+        return $this;
     }
 
     /**
@@ -118,11 +121,15 @@ class YFrameAbstract
      * @param  int  $height
      * @param  string  $unit
      *
+     * @return \SOS\LaravelYoutubeFrameGenerator\Abstracts\YFrameAbstract
      * @author karam mustafa
      */
     public function height($height = 300, $unit = "px")
     {
         $this->setCss("height:".$height.$unit.';');
+
+        return $this;
+
     }
 
 }

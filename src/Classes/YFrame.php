@@ -3,6 +3,7 @@
 namespace SOS\LaravelYoutubeFrameGenerator\Classes;
 
 
+use SOS\LaravelYoutubeFrameGenerator\Abstracts\YFrameAbstract;
 use SOS\LaravelYoutubeFrameGenerator\Interfaces\YFrameInterface;
 
 /**
@@ -51,7 +52,7 @@ class YFrame extends YFrameAbstract implements YFrameInterface
         return sprintf(
             '<iframe src="https://www.youtube.com/embed/%s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" %s %s style="%s"></iframe>',
             $this->getId($url),
-            $this->getFullscreen() ? 'allowfullscreen' : '',
+            $this->getIsFullscreen() ? 'allowfullscreen' : '',
             $this->getAttributes(),
             $this->getCss()
         );

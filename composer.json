@@ -1,5 +1,5 @@
 {
-    "name": "syrian-open-source/laravel-package-template",
+    "name": "syrian-open-source/laravel-youtube-iframe-generator",
     "description": "Package description",
     "license": "MIT",
     "keywords": [
@@ -32,7 +32,7 @@
     "extra" : {
         "laravel" : {
             "providers" : [
-                "SOS\\LaravelYoutubeFrameGenerator\\Providers\\LaravelPackageTemplateServiceProviders"
+                "SOS\\LaravelYoutubeFrameGenerator\\Providers\\YFrameServiceProviders"
             ]
         }
     },
