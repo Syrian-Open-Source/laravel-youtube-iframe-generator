@@ -40,7 +40,6 @@ class InstallCommand extends Command
      */
     public function handle()
     {
-
         Artisan::call('vendor:publish --tag=youtube-frame-generator');
 
         $this->info('<info> Install the dependencies was success</info>');

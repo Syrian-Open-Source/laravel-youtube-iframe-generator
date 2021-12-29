@@ -2,7 +2,6 @@
 
 namespace SOS\LaravelYoutubeFrameGenerator\Classes;
 
-
 use SOS\LaravelYoutubeFrameGenerator\Abstracts\YFrameAbstract;
 use SOS\LaravelYoutubeFrameGenerator\Interfaces\YFrameInterface;
 
@@ -14,7 +13,6 @@ use SOS\LaravelYoutubeFrameGenerator\Interfaces\YFrameInterface;
  */
 class YFrame extends YFrameAbstract implements YFrameInterface
 {
-
     /**
      * YFrame constructor.
      */
@@ -38,6 +36,7 @@ class YFrame extends YFrameAbstract implements YFrameInterface
         $res = strpos($url, '?v=');
         if ($res !== false) {
             $t = explode("?v=", $url);
+
             return $t[count($t) - 1];
         }
 
@@ -46,13 +45,13 @@ class YFrame extends YFrameAbstract implements YFrameInterface
         $res = strpos($url, 'youtu.be');
         if ($res !== false) {
             $t = explode($url, '/');
+
             return $t[count($t) - 1];
         }
 
         // Otherwise assume that the user passed the id.
         return $url;
     }
-
 
     /**
      * @inheritDoc
@@ -84,6 +83,4 @@ class YFrame extends YFrameAbstract implements YFrameInterface
 
         return $this;
     }
-
-
 }

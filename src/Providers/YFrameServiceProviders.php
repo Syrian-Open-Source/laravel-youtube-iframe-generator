@@ -3,8 +3,8 @@
 namespace SOS\LaravelYoutubeFrameGenerator\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use SOS\LaravelYoutubeFrameGenerator\Commands\InstallCommand;
 use SOS\LaravelYoutubeFrameGenerator\Classes\YFrame;
+use SOS\LaravelYoutubeFrameGenerator\Commands\InstallCommand;
 
 class YFrameServiceProviders extends ServiceProvider
 {

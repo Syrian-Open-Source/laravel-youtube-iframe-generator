@@ -127,7 +127,5 @@ abstract class YFrameAbstract
         $this->setCss("height:".$height.';');
 
         return $this;
-
     }
-
 }
