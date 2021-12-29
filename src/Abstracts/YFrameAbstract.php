@@ -11,7 +11,7 @@ abstract class YFrameAbstract
 
     /**
      * @return mixed
-     * @author karam mustaf
+     * @author Abdussalam M. Al-Ali
      */
     public function getCss()
     {
@@ -22,7 +22,7 @@ abstract class YFrameAbstract
      * @param  mixed  $css
      *
      * @return YFrameAbstract
-     * @author karam mustaf
+     * @author Abdussalam M. Al-Ali
      */
     public function setCss($css)
     {
@@ -35,7 +35,7 @@ abstract class YFrameAbstract
      * @param $url
      *
      * @return mixed
-     * @author karam mustaf
+     * @author Abdussalam M. Al-Ali
      */
     public function getId($url)
     {
@@ -46,7 +46,7 @@ abstract class YFrameAbstract
      * @param  mixed  $id
      *
      * @return YFrameAbstract
-     * @author karam mustaf
+     * @author Abdussalam M. Al-Ali
      */
     public function setId($id)
     {
@@ -57,7 +57,7 @@ abstract class YFrameAbstract
 
     /**
      * @return string
-     * @author karam mustaf
+     * @author Abdussalam M. Al-Ali
      */
     public function getIsFullscreen()
     {
@@ -68,7 +68,7 @@ abstract class YFrameAbstract
      * @param  bool  $fullscreen
      *
      * @return YFrameAbstract
-     * @author karam mustaf
+     * @author Abdussalam M. Al-Ali
      */
     public function isFullscreen($fullscreen = true)
     {
@@ -79,7 +79,7 @@ abstract class YFrameAbstract
 
     /**
      * @return string
-     * @author karam mustaf
+     * @author Abdussalam M. Al-Ali
      */
     public function getAttributes()
     {
@@ -90,7 +90,7 @@ abstract class YFrameAbstract
      * @param  string  $attributes
      *
      * @return YFrameAbstract
-     * @author karam mustaf
+     * @author Abdussalam M. Al-Ali
      */
     public function setAttributes($attributes)
     {

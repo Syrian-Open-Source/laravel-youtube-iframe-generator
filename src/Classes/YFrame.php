@@ -9,7 +9,7 @@ use SOS\LaravelYoutubeFrameGenerator\Interfaces\YFrameInterface;
 /**
  * Class IFrame
  *
- * @author your name
+ * @author Abdussalam M. Al-Ali
  * @package SOS\LaravelYoutubeFrameGenerator\Classes
  */
 class YFrame extends YFrameAbstract implements YFrameInterface
@@ -29,7 +29,7 @@ class YFrame extends YFrameAbstract implements YFrameInterface
      * @param  string  $url
      *
      * @return mixed
-     * @author karam mustaf
+     * @author Abdussalam M. Al-Ali
      */
     public function getId($url)
     {

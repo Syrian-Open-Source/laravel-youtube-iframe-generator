@@ -1,47 +1,41 @@
 ![logo](assets/logo.png)
 
-Design a simple and expressive logo with the same model you see above,
-the logo design helps to unify the visual identity and further develop the optimal packages to increase the quality of the software we develop
-
-#NOTES:
-* You should replace all your dependencies into your custom names and files including:
-  * vendor namespace.
-  * composer information.
-  * logo
-  * credit and contributors links
-  * security email
-* To use this template, please click on button above "Use this template".  
-* Delete this section after you have finished developing your package
-# Package Name
-Your package description,Try to be briefly describing the features of the package,
-which versions of Laravel and php it require,
-and if there are external resources for learning or explanation
+# Youtube Frame Generator
+Laravel package allows you to generate iframe tag with video player depending on a youtube url.
 
 ##### 1 - Dependency
 The first step is using composer to install the package and automatically update your composer.json file, you can do this by running:
 
 ```shell
-composer require vendor_name/package_name
+composer require syrian-open-source/laravel-youtube-iframe-generator
 ```
+
 ##### 2 - Copy the package providers to your local config with the publish command, this will publish the config:
-
-Replace this command with your install command,
-The package must contain an installation command even if it does not do anything,
-this helps with maintenance in the future.
-
 ```shell
-php artisan package:install
+php artisan yframe:install
 ```
 
 Features
 -----------
-Put the name of the feature and a link to this feature
-- [Any feature](https://github.com/syrian-open-source/laravel-package-template/blob/main/docs/feature.md#usage)
+basic usage:
 
+```php
+{!! \SOS\LaravelYoutubeFrameGenerator\Facades\YFrameFacade::generate('https://www.youtube.com/watch?v=35JzR2ymxJE')!!}
+```
+
+If you want to set your css, attributes, height, width or fullscreen allowed:
+```php
+
+{!! \SOS\LaravelYoutubeFrameGenerator\Facades\YFrameFacade::width('100%')
+        ->height('400px')
+        ->isFullscreen(true)
+        ->generate('https://www.youtube.com/watch?v=35JzR2ymxJE'); !!}
+
+```
 
 Changelog
 ---------
-Please see the [CHANGELOG](https://github.com/syrian-open-source/laravel-package-template/blob/master/CHANGELOG.md) for more information about what has changed or updated or added recently.
+Please see the [CHANGELOG](https://github.com/syrian-open-source/laravel-youtube-iframe-generator/blob/master/CHANGELOG.md) for more information about what has changed or updated or added recently.
 
 Security
 --------
@@ -50,5 +44,5 @@ if we do not fix it within a short period of time please open a new issue descri
 
 Credits
 -------
-* [your email](https://github.com/syrian-open-source/laravel-package-template/graphs/contributors)
-* [All contributors](https://github.com/syrian-open-source/laravel-package-template/graphs/contributors)
+* [your email](https://www.linkedin.com/in/abdussalam-alali/)
+* [All contributors](https://github.com/syrian-open-source/laravel-youtube-iframe-generator/graphs/contributors)

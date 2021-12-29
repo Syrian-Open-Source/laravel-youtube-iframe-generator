@@ -11,7 +11,7 @@ class YFrameServiceProviders extends ServiceProvider
     /**
      *
      *
-     * @author your name
+     * @author Abdussalam M. Al-Ali
      */
     public function boot()
     {
@@ -23,7 +23,7 @@ class YFrameServiceProviders extends ServiceProvider
     /**
      *
      *
-     * @author your name
+     * @author Abdussalam M. Al-Ali
      */
     public function register()
     {
@@ -42,7 +42,7 @@ class YFrameServiceProviders extends ServiceProvider
     /**
      * publish files
      *
-     * @author your name
+     * @author Abdussalam M. Al-Ali
      */
     protected function publishesPackages()
     {
@@ -54,7 +54,7 @@ class YFrameServiceProviders extends ServiceProvider
     /**
      *
      *
-     * @author your name
+     * @author Abdussalam M. Al-Ali
      */
     private function resolveCommands()
     {
