@@ -1,17 +1,17 @@
 <?php
 
-namespace SOS\LaravelPackageTemplate\Providers;
+namespace SOS\LaravelYoutubeFrameGenerator\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use SOS\LaravelPackageTemplate\Classes\ClassToBuild;
-use SOS\LaravelPackageTemplate\Commands\InstallCommand;
+use SOS\LaravelYoutubeFrameGenerator\Commands\InstallCommand;
+use SOS\LaravelYoutubeFrameGenerator\Classes\YFrame;
 
-class ClassToBuildServiceProviders extends ServiceProvider
+class YFrameServiceProviders extends ServiceProvider
 {
     /**
      *
      *
-     * @author your name
+     * @author Abdussalam M. Al-Ali
      */
     public function boot()
     {
@@ -23,7 +23,7 @@ class ClassToBuildServiceProviders extends ServiceProvider
     /**
      *
      *
-     * @author your name
+     * @author Abdussalam M. Al-Ali
      */
     public function register()
     {
@@ -34,27 +34,27 @@ class ClassToBuildServiceProviders extends ServiceProvider
      */
     protected function registerFacades()
     {
-        $this->app->singleton('LaravelPackageTemplate', function () {
-            return new ClassToBuild();
+        $this->app->singleton('YFrameFacade', function () {
+            return new YFrame();
         });
     }
 
     /**
      * publish files
      *
-     * @author your name
+     * @author Abdussalam M. Al-Ali
      */
     protected function publishesPackages()
     {
         $this->publishes([
-            __DIR__.'/../Config/package_config.php' => config_path('package_config.php'),
-        ], 'config-command');
+            __DIR__.'/../Config/youtube_frame_generator.php' => config_path('youtube_frame_generator.php'),
+        ], 'youtube-frame-generator');
     }
 
     /**
      *
      *
-     * @author your name
+     * @author Abdussalam M. Al-Ali
      */
     private function resolveCommands()
     {
