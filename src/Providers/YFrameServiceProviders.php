@@ -1,12 +1,12 @@
 <?php
 
-namespace SOS\LaravelPackageTemplate\Providers;
+namespace SOS\LaravelYoutubeFrameGenerator\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use SOS\LaravelPackageTemplate\Classes\ClassToBuild;
-use SOS\LaravelPackageTemplate\Commands\InstallCommand;
+use SOS\LaravelYoutubeFrameGenerator\Commands\InstallCommand;
+use SOS\LaravelYoutubeFrameGenerator\Classes\YFrame;
 
-class ClassToBuildServiceProviders extends ServiceProvider
+class YFrameServiceProviders extends ServiceProvider
 {
     /**
      *
@@ -34,8 +34,8 @@ class ClassToBuildServiceProviders extends ServiceProvider
      */
     protected function registerFacades()
     {
-        $this->app->singleton('LaravelPackageTemplate', function () {
-            return new ClassToBuild();
+        $this->app->singleton('YFrameFacade', function () {
+            return new YFrame();
         });
     }
 
@@ -47,8 +47,8 @@ class ClassToBuildServiceProviders extends ServiceProvider
     protected function publishesPackages()
     {
         $this->publishes([
-            __DIR__.'/../Config/package_config.php' => config_path('package_config.php'),
-        ], 'config-command');
+            __DIR__.'/../Config/youtube_frame_generator.php' => config_path('youtube_frame_generator.php'),
+        ], 'youtube-frame-generator');
     }
 
     /**

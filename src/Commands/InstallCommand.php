@@ -1,6 +1,6 @@
 <?php
 
-namespace SOS\LaravelPackageTemplate\Commands;
+namespace SOS\LaravelYoutubeFrameGenerator\Commands;
 
 use Illuminate\Console\Command;
 

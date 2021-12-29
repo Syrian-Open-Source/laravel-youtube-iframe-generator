@@ -1,14 +1,15 @@
 <?php
 
-namespace SOS\LaravelPackageTemplate\Classes;
+namespace SOS\LaravelYoutubeFrameGenerator\Classes;
+
 
 /**
- * Class ClassToBuild
+ * Class IFrame
  *
  * @author your name
  * @package SOS\MultiProcess\Classes
  */
-class ClassToBuild
+class YFrame extends YFrameAbstract
 {
     /**
      * description
@@ -34,7 +35,7 @@ class ClassToBuild
      *
      * @param  mixed  $example
      *
-     * @return ClassToBuild
+     * @return IFrame
      * @author your name
      */
     public function setExample($example)

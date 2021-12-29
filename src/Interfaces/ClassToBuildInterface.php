@@ -1,6 +1,6 @@
 <?php
 
-namespace SOS\LaravelPackageTemplate\Interfaces;
+namespace SOS\LaravelYoutubeFrameGenerator\Interfaces;
 
 interface ClassToBuildInterface
 {

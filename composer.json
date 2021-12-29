@@ -20,8 +20,8 @@
     },
     "autoload" : {
         "psr-4": {
-            "SOS\\LaravelPackageTemplate\\" : "src",
-            "SOS\\LaravelPackageTemplate\\Tests\\": "src/tests"
+            "SOS\\LaravelYoutubeFrameGenerator\\" : "src",
+            "SOS\\LaravelYoutubeFrameGenerator\\Tests\\": "src/tests"
         }
     },
     "scripts": {
@@ -32,7 +32,7 @@
     "extra" : {
         "laravel" : {
             "providers" : [
-                "SOS\\LaravelPackageTemplate\\Providers\\LaravelPackageTemplateServiceProviders"
+                "SOS\\LaravelYoutubeFrameGenerator\\Providers\\LaravelPackageTemplateServiceProviders"
             ]
         }
     },
