@@ -9,7 +9,7 @@ use SOS\LaravelYoutubeFrameGenerator\Interfaces\YFrameInterface;
  * Class IFrame
  *
  * @author your name
- * @package SOS\MultiProcess\Classes
+ * @package SOS\LaravelYoutubeFrameGenerator\Classes
  */
 class YFrame extends YFrameAbstract implements YFrameInterface
 {
