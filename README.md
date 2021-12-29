@@ -44,5 +44,5 @@ if we do not fix it within a short period of time please open a new issue descri
 
 Credits
 -------
-* [your email](https://www.linkedin.com/in/abdussalam-alali/)
+* [Abdussalam M. Al-Ali](https://www.linkedin.com/in/abdussalam-alali/)
 * [All contributors](https://github.com/syrian-open-source/laravel-youtube-iframe-generator/graphs/contributors)
