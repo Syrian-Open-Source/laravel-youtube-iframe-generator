@@ -1,7 +1,7 @@
 ![logo](assets/logo.png)
 
 # Youtube Frame Generator
-Laravel package allows you to generate iframe tag with video player depending on a youtube url.
+Laravel package allows you to generate an iframe tag with a video player depending on a youtube URL.
 
 ##### 1 - Dependency
 The first step is using composer to install the package and automatically update your composer.json file, you can do this by running:
