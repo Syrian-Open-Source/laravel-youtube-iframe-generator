@@ -1,3 +1,7 @@
+## v1.0.1 - 2021-12-29
+
+- Fix composer.lock file.
+
 ## v1.0.0 - 2021-12-29
 
 The first release.
