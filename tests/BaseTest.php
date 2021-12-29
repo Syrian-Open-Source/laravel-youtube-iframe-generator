@@ -1,6 +1,6 @@
 <?php
 
-namespace SOS\LaravelPackageTemplate\Tests;
+namespace SOS\LaravelYoutubeFrameGenerator\Tests;
 
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 

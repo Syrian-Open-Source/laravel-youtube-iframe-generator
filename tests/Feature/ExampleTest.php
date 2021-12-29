@@ -1,8 +1,8 @@
 <?php
 
-namespace SOS\LaravelPackageTemplate\Tests\Feature;
+namespace SOS\LaravelYoutubeFrameGenerator\Tests\Feature;
 
-use SOS\LaravelPackageTemplate\Tests\BaseTest;
+use SOS\LaravelYoutubeFrameGenerator\Tests\BaseTest;
 
 class ExampleTest extends BaseTest
 {

@@ -3,45 +3,22 @@
 namespace SOS\LaravelYoutubeFrameGenerator\Classes;
 
 
+use SOS\LaravelYoutubeFrameGenerator\Interfaces\YFrameInterface;
+
 /**
  * Class IFrame
  *
  * @author your name
  * @package SOS\MultiProcess\Classes
  */
-class YFrame extends YFrameAbstract
+class YFrame extends YFrameAbstract implements YFrameInterface
 {
-    /**
-     * description
-     *
-     * @author your name
-     * @var
-     */
-    private $example;
 
     /**
-     * description
-     *
-     * @return mixed
-     * @author your name
+     * @inheritDoc
      */
-    public function getExample()
+    public function generate($url)
     {
-        return $this->example;
-    }
-
-    /**
-     * description
-     *
-     * @param  mixed  $example
-     *
-     * @return IFrame
-     * @author your name
-     */
-    public function setExample($example)
-    {
-        $this->example = $example;
-
-        return $this;
+        // TODO: Implement generate() method.
     }
 }
