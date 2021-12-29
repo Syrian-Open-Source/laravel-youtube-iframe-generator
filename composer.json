@@ -1,16 +1,18 @@
 {
     "name": "syrian-open-source/laravel-youtube-iframe-generator",
-    "description": "Package description",
+    "description": "Laravel package allows you to generate an iframe tag with a video player depending on a youtube URL.",
     "license": "MIT",
     "keywords": [
         "laravel",
-        "syrian open source"
+        "syrian open source",
+        "laravel-iframe",
+        "youtube-iframe"
     ],
     "authors": [
         {
-            "name": "Karam Mustafa",
-            "email": "karam2mustafa@gmail.com",
-            "homepage": "https://github.com/karam-mustafa",
+            "name": "Abdussalam Al-Ali",
+            "email": "alali.abdusslam@gmail.com",
+            "homepage": "https://github.com/abdussalam-alali",
             "role": "Developer"
         }
     ],
