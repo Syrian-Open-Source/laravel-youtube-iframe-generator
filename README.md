@@ -39,7 +39,7 @@ Please see the [CHANGELOG](https://github.com/syrian-open-source/laravel-youtube
 
 Security
 --------
-If you discover any security related issues, please email them first to [alali.abdusslam@gmail.com](alali.abdusslam@gmail.com), 
+If you discover any security related issues, please email them first to alali.abdusslam@gmail.com, 
 if we do not fix it within a short period of time please open a new issue describing your problem. 
 
 Credits
