@@ -69,7 +69,7 @@ class YFrameServiceProviders extends ServiceProvider
 
     protected function registerDirectives()
     {
-        Blade::directive('yframe', function ($url, array $options) {
+        Blade::directive('yframe', function ($url, array $options = []) {
             return sprintf('<?php echo (new YFrame())
                 ->width(%s)
                 ->height(%s)
