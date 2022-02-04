@@ -70,21 +70,26 @@ class YFrameServiceProviders extends ServiceProvider
     protected function registerDirectives()
     {
         Blade::directive('yframe', function ($expression) {
-            [$url, $options] = $this->extractArguments($expression);
+            list($url, $options) = $this->extractArguments($expression);
 
-            $width = array_key_exists('width', $options) ? "->width({$options['width']})" : '';
-            $height = array_key_exists('height', $options) ? "->height({$options['height']})" : '';
-            $isFullscreen = array_key_exists('isFullscreen', $options) ? "->isFullscreen({$options['isFullscreen']})" : '';
+            $width = $this->printMethodChain('width', $options);
+            $height = $this->printMethodChain('height', $options);
+            $isFullscreen = $this->printMethodChain('isFullscreen', $options);
 
             return sprintf('<?php echo (new \SOS\LaravelYoutubeFrameGenerator\Classes\YFrame())%s%s%s->generate(%s); ?>', $width, $height, $isFullscreen, $url);
         });
     }
 
+    private function printMethodChain($key, $array)
+    {
+        return array_key_exists($key, $array) ? "->$key($array[$key])" : '';
+    }
+
     private function extractArguments($arguments)
     {
-        [$url, $options] = explode(',', $arguments, 2);
+        list($url, $options) = explode(',', $arguments, 2);
         $options = collect(explode(',', trim(trim(str_replace(['[', ']'], ['', ''], $options)), ','))) // remove array brackets, trim trailing comma
-        ->map(fn ($item) => explode('=>', trim($item)))
+            ->map(fn ($item) => explode('=>', trim($item)))
             ->map(fn ($item) => [trim(trim($item[0]), '\'"'), trim($item[1])]) // remove quotation from array keys
             ->pluck('1', '0');
 
