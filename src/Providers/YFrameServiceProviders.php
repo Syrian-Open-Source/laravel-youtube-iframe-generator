@@ -67,10 +67,16 @@ class YFrameServiceProviders extends ServiceProvider
         }
     }
 
+    /**
+     * Register package directives
+     *
+     * @return void
+     * @author Roduan Kareem Aldeen
+     */
     protected function registerDirectives()
     {
         Blade::directive('yframe', function ($expression) {
-            list($url, $options) = $this->extractArguments($expression);
+            [$url, $options] = $this->extractArguments($expression);
 
             $width = $this->printMethodChain('width', $options);
             $height = $this->printMethodChain('height', $options);
@@ -80,14 +86,31 @@ class YFrameServiceProviders extends ServiceProvider
         });
     }
 
+    /**
+     * Generate ->method(args) string.
+     *
+     * @param $key
+     * @param $array
+     * @return string
+     *
+     * @author Roduan Kareem Aldeen
+     */
     private function printMethodChain($key, $array)
     {
         return array_key_exists($key, $array) ? "->$key($array[$key])" : '';
     }
 
-    private function extractArguments($arguments)
+    /**
+     * Convert string expression coming from directive
+     *
+     * @param  string  $expression
+     * @return array
+     *
+     * @author Roduan Kareem Aldeen
+     */
+    private function extractArguments(string $expression)
     {
-        list($url, $options) = explode(',', $arguments, 2);
+        [$url, $options] = explode(',', $expression, 2);
         $options = collect(explode(',', trim(trim(str_replace(['[', ']'], ['', ''], $options)), ','))) // remove array brackets, trim trailing comma
             ->map(fn ($item) => explode('=>', trim($item)))
             ->map(fn ($item) => [trim(trim($item[0]), '\'"'), trim($item[1])]) // remove quotation from array keys
