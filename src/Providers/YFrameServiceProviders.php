@@ -76,8 +76,10 @@ class YFrameServiceProviders extends ServiceProvider
     protected function registerDirectives()
     {
         Blade::directive('yframe', function ($expression) {
+            // destruct array into two variables
             [$url, $options] = $this->extractArguments($expression);
 
+            // get methods to print
             $width = $this->printMethodChain('width', $options);
             $height = $this->printMethodChain('height', $options);
             $isFullscreen = $this->printMethodChain('isFullscreen', $options);
@@ -110,10 +112,15 @@ class YFrameServiceProviders extends ServiceProvider
      */
     private function extractArguments(string $expression)
     {
+        // Separate expression to 2 parameters.
         [$url, $options] = explode(',', $expression, 2);
-        $options = collect(explode(',', trim(trim(str_replace(['[', ']'], ['', ''], $options)), ','))) // remove array brackets, trim trailing comma
+        // remove array brackets, trim trailing comma
+        $options = collect(explode(',', trim(trim(str_replace(['[', ']'], ['', ''], $options)), ',')))
+            // make each item as two array items
             ->map(fn ($item) => explode('=>', trim($item)))
-            ->map(fn ($item) => [trim(trim($item[0]), '\'"'), trim($item[1])]) // remove quotation from array keys
+            // remove quotation from array keys
+            ->map(fn ($item) => [trim(trim($item[0]), '\'"'), trim($item[1])])
+            // convert collection to associative array
             ->pluck('1', '0');
 
         return [$url, $options->toArray()];
