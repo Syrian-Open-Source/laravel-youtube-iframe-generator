@@ -70,11 +70,11 @@ class YFrameServiceProviders extends ServiceProvider
     protected function registerDirectives()
     {
         Blade::directive('yframe', function ($url, array $options) {
-            return (new YFrame())
-                ->width($options['width'])
-                ->height($options['height'])
-                ->isFullscreen($options['isFullscreen'])
-                ->generate($url);
+            return sprintf('<?php echo (new YFrame())
+                ->width(%s)
+                ->height(%s)
+                ->isFullscreen(%s)
+                ->generate(%s); ?>', $options['width'], $options['height'], $options['isFullscreen'], $url);
         });
     }
 }
