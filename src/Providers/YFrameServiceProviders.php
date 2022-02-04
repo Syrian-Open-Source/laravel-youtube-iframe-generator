@@ -69,12 +69,25 @@ class YFrameServiceProviders extends ServiceProvider
 
     protected function registerDirectives()
     {
-        Blade::directive('yframe', function ($url, array $options = []) {
-            $width = array_key_exists('width', $options) ? '->width(' . $options['width'] . ')' : '';
-            $height = array_key_exists('height', $options) ? '->height(' . $options['height'] . ')' : '';
-            $isFullscreen = array_key_exists('isFullscreen', $options) ? '->isFullscreen(' . $options['isFullscreen'] . ')' : '';
+        Blade::directive('yframe', function ($expression) {
+            [$url, $options] = $this->extractArguments($expression);
 
-            return sprintf('<?php echo (new YFrame())%s%s%s->generate(%s); ?>', $width, $height, $isFullscreen, $url);
+            $width = array_key_exists('width', $options) ? "->width({$options['width']})" : '';
+            $height = array_key_exists('height', $options) ? "->height({$options['height']})" : '';
+            $isFullscreen = array_key_exists('isFullscreen', $options) ? "->isFullscreen({$options['isFullscreen']})" : '';
+
+            return sprintf('<?php echo (new \SOS\LaravelYoutubeFrameGenerator\Classes\YFrame())%s%s%s->generate(%s); ?>', $width, $height, $isFullscreen, $url);
         });
+    }
+
+    private function extractArguments($arguments)
+    {
+        [$url, $options] = explode(',', $arguments, 2);
+        $options = collect(explode(',', trim(trim(str_replace(['[', ']'], ['', ''], $options)), ','))) // remove array brackets, trim trailing comma
+        ->map(fn ($item) => explode('=>', trim($item)))
+            ->map(fn ($item) => [trim(trim($item[0]), '\'"'), trim($item[1])]) // remove quotation from array keys
+            ->pluck('1', '0');
+
+        return [$url, $options->toArray()];
     }
 }
