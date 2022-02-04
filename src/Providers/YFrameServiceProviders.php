@@ -2,6 +2,7 @@
 
 namespace SOS\LaravelYoutubeFrameGenerator\Providers;
 
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use SOS\LaravelYoutubeFrameGenerator\Classes\YFrame;
 use SOS\LaravelYoutubeFrameGenerator\Commands\InstallCommand;
@@ -18,6 +19,7 @@ class YFrameServiceProviders extends ServiceProvider
         $this->publishesPackages();
         $this->resolveCommands();
         $this->registerFacades();
+        $this->registerDirectives();
     }
 
     /**
@@ -63,5 +65,16 @@ class YFrameServiceProviders extends ServiceProvider
                 InstallCommand::class,
             ]);
         }
+    }
+
+    protected function registerDirectives()
+    {
+        Blade::directive('yframe', function ($url, array $options) {
+            return (new YFrame())
+                ->width($options['width'])
+                ->height($options['height'])
+                ->isFullscreen($options['isFullScreen'])
+                ->generate($url);
+        });
     }
 }
