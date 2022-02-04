@@ -73,7 +73,7 @@ class YFrameServiceProviders extends ServiceProvider
             return (new YFrame())
                 ->width($options['width'])
                 ->height($options['height'])
-                ->isFullscreen($options['isFullScreen'])
+                ->isFullscreen($options['isFullscreen'])
                 ->generate($url);
         });
     }
