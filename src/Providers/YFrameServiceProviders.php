@@ -113,15 +113,18 @@ class YFrameServiceProviders extends ServiceProvider
     private function extractArguments(string $expression)
     {
         // Separate expression to 2 parameters.
-        [$url, $options] = explode(',', $expression, 2);
-        // remove array brackets, trim trailing comma
-        $options = collect(explode(',', trim(trim(str_replace(['[', ']'], ['', ''], $options)), ',')))
+        [$url, $options] = array_merge(explode(',', $expression, 2), [collect([])]);
+
+        if (is_string($options)) {
+            // remove array brackets, trim trailing comma
+            $options = collect(explode(',', trim(trim(str_replace(['[', ']'], ['', ''], $options)), ',')))
             // make each item as two array items
             ->map(fn ($item) => explode('=>', trim($item)))
             // remove quotation from array keys
             ->map(fn ($item) => [trim(trim($item[0]), '\'"'), trim($item[1])])
             // convert collection to associative array
             ->pluck('1', '0');
+        }
 
         return [$url, $options->toArray()];
     }
