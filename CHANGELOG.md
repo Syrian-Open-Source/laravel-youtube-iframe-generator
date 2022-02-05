@@ -1,3 +1,7 @@
+## v1.1.0 - 2022-02-05
+
+- Added yframe directive
+
 ## v1.0.1 - 2021-12-29
 
 - Fix composer.lock file.
